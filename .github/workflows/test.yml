@@ -13,13 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-
+    - uses: actions/checkout@v3  # Actualiza a la versión más reciente
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3  # Actualiza a la versión más reciente
       with:
-        node-version: '14'
-
+        node-version: '16'  # Puedes actualizar a la versión de Node.js que necesites
     - run: npm install
-
     - run: npm test
