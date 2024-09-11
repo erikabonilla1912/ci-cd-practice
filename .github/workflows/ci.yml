@@ -1,0 +1,22 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3  # Actualiza a la versión más reciente
+    - name: Set up Node.js
+      uses: actions/setup-node@v3  # Actualiza a la versión más reciente
+      with:
+        node-version: '20'  # Puedes actualizar a la versión de Node.js que necesites
+    - run: npm install
+    - run: npm test
